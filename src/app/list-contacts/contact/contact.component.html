@@ -1,0 +1,28 @@
+<div *ngIf="contact">
+  <mat-card class="contact-list">
+    <h2>Fiche {{ contact.civilite | titlecase}} {{ contact.nom | uppercase}} {{ contact.prenom | titlecase}}</h2>
+    <div class="adresse-container">
+      <div>
+        <mat-icon>home</mat-icon>
+      </div>
+      <div>
+        <p>{{ contact.adresseLigne1 }}</p>
+        <p *ngIf="contact.adresseLigne2">{{ contact.adresseLigne2 }}</p>
+      </div>
+    </div>
+    <div class="telephone-container">
+      <div>
+        <mat-icon>phone</mat-icon>
+      </div>
+      <div>
+        <p *ngFor="let tel of contact.telephones">{{ tel.type }} : {{tel.numero}}</p>
+      </div>
+    </div>
+    <div class="mail-container">
+      <mat-icon>mail</mat-icon><span>{{ contact.mail }}</span>
+    </div>
+  </mat-card>
+</div>
+<div *ngIf="!contact">
+  chargement...
+</div>

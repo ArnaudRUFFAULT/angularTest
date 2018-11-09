@@ -28,7 +28,19 @@
                 {"numero" : "0664256035", "type" : 1},
                 {"numero" : "0478563969", "type" : 0}
             ]
+        },
+        {
+            "id" : 3,
+            "prenom": "Amandine",
+            "nom": "Di Bernardo",
+            "adresseLigne1": "25 rue des Pestos",
+            "civilite" : 1,
+            "mail": "amandine@gmail.com",
+            "ville": "Nantes",
+            "codePostal" : 75695,
+            "telephones" : [
+                {"numero" : "066483015", "type" : 1}
+            ]
         }
     ]
-    
 }

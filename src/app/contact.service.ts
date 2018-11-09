@@ -9,11 +9,11 @@ export class ContactService {
 
   constructor(private http: HttpClient) { }
 
-  getContacts(){
-    return this.http.get(environment.backendUrl);
+  getContacts() {
+    return this.http.get(environment.backendUrl + '/contacts');
   }
 
   getContact(id){
-    return this.http.get(`environment.backendUrl/${id}`)
+    return this.http.get(environment.backendUrl + '/contacts/' + id);
   }
 }
