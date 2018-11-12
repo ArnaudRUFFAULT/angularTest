@@ -1,46 +1,40 @@
 {
-    "contacts" : [
-        {   
-            "id" : 1,
-            "prenom": "Arnaud",
-            "nom": "RUFFAULT",
-            "adresseLigne1": "1 rue des Lilas",
-            "civilite" : 0,
-            "mail": "arnaud.ruffault@gmail.com",
-            "ville": "Montpellier",
-            "codePostal" : 34000,
-            "telephones" : [
-                {"numero" : "0666456035", "type" : 1},
-                {"numero" : "0478563219", "type" : 0}
-            ]
+  "contacts": [
+    {
+      "id": 1,
+      "prenom": "Arnaud",
+      "nom": "RUFFAULT",
+      "adresseLigne1": "1 rue des Lilas",
+      "civilite": 0,
+      "mail": "arnaud.ruffault@gmail.com",
+      "ville": "Montpellier",
+      "codePostal": 34000,
+      "telephones": [
+        {
+          "numero": "0666456035",
+          "type": 1
         },
         {
-            "id" : 2,
-            "prenom": "Nico",
-            "nom": "BRIAND",
-            "adresseLigne1": "25 rue des Pestos",
-            "adresseLigne2": "residence Jardin",
-            "civilite" : 0,
-            "mail": "briand@gmail.com",
-            "ville": "Montpellier",
-            "codePostal" : 34022,
-            "telephones" : [
-                {"numero" : "0664256035", "type" : 1},
-                {"numero" : "0478563969", "type" : 0}
-            ]
-        },
-        {
-            "id" : 3,
-            "prenom": "Amandine",
-            "nom": "Di Bernardo",
-            "adresseLigne1": "25 rue des Pestos",
-            "civilite" : 1,
-            "mail": "amandine@gmail.com",
-            "ville": "Nantes",
-            "codePostal" : 75695,
-            "telephones" : [
-                {"numero" : "066483015", "type" : 1}
-            ]
+          "numero": "0478563219",
+          "type": 0
         }
-    ]
+      ]
+    },
+    {
+      "id": 3,
+      "prenom": "Amandine",
+      "nom": "Di Bernardo",
+      "adresseLigne1": "25 rue des Pestos",
+      "civilite": 1,
+      "mail": "amandine@gmail.com",
+      "ville": "Nantes",
+      "codePostal": 75695,
+      "telephones": [
+        {
+          "numero": "066483015",
+          "type": 1
+        }
+      ]
+    }
+  ]
 }

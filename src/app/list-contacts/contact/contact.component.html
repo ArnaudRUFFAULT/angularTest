@@ -18,6 +18,7 @@
     <div class="mail-container">
       <mat-icon>mail</mat-icon><span>{{ contact.mail }}</span>
     </div>
+    <button mat-raised-button color="warn" (click)="supprimerContact()">supprimer</button>
   </mat-card>
 </div>
 <div *ngIf="!contact">

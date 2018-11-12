@@ -24,15 +24,15 @@
     <br />
 
     <mat-form-field>
-      <input matInput placeholder="Adresse - Ligne 1" formControlName="adresse1" required />
-      <mat-error *ngIf="form.get('adresse1').errors?.required">L'adresse est obligatoire</mat-error>
-      <mat-error *ngIf="form.get('adresse1').errors?.pattern">Ne peut contenir que des lettres, chiffres, espaces, tirets, points, virgules</mat-error>
+      <input matInput placeholder="Adresse - Ligne 1" formControlName="adresseLigne1" required />
+      <mat-error *ngIf="form.get('adresseLigne1').errors?.required">L'adresse est obligatoire</mat-error>
+      <mat-error *ngIf="form.get('adresseLigne1').errors?.pattern">Ne peut contenir que des lettres, chiffres, espaces, tirets, points, virgules</mat-error>
     </mat-form-field>
 
     <br />
 
     <mat-form-field>
-      <input matInput placeholder="Adresse - Ligne 1" formControlName="adresse2" />
+      <input matInput placeholder="Adresse - Ligne 1" formControlName="adresseLigne2" />
     </mat-form-field>
 
     <br />
@@ -52,9 +52,9 @@
     <br />
 
     <mat-form-field>
-      <input matInput placeholder="E-mail" formControlName="email" required />
-      <mat-error *ngIf="form.get('email').errors?.required">Champ obligatoire</mat-error>
-      <mat-error *ngIf="form.get('email').errors?.email">Doit avoir un format Email</mat-error>
+      <input matInput placeholder="E-mail" formControlName="mail" required />
+      <mat-error *ngIf="form.get('mail').errors?.required">Champ obligatoire</mat-error>
+      <mat-error *ngIf="form.get('mail').errors?.email">Doit avoir un format Email</mat-error>
     </mat-form-field>
 
     <br />
@@ -76,6 +76,7 @@
       </div>
       <button mat-raised-button color="primary" (click)="ajouterTelephone()">Ajouter un numéro</button>
     </div>
+    <button type="submit" mat-button (click) = "validForm()">Valider</button>
   </form>
 </mat-card>
 <p>{{form.value | json}}</p>

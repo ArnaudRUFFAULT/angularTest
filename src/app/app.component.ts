@@ -18,4 +18,8 @@ export class AppComponent implements OnInit{
     redirectListContacts(){
       this.router.navigate(['/contacts']);
     }
+
+    redirectAddContact(){
+      this.router.navigate(['/admin/ajout-contact']);
+    }
 }

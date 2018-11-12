@@ -16,4 +16,12 @@ export class ContactService {
   getContact(id){
     return this.http.get(environment.backendUrl + '/contacts/' + id);
   }
+
+  addContact(contact){
+    return this.http.post(environment.backendUrl + '/contacts', contact);
+  }
+
+  deleteContactById(id : number){
+    return this.http.delete(environment.backendUrl + '/contacts/' + id);
+  }
 }
