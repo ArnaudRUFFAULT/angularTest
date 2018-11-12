@@ -12,10 +12,7 @@
     </div>
     <div class="telephone-container">
       <div>
-        <mat-icon>phone</mat-icon>
-      </div>
-      <div>
-        <p *ngFor="let tel of contact.telephones">{{ tel.type }} : {{tel.numero}}</p>
+        <p *ngFor="let tel of contact.telephones"><mat-icon>phone</mat-icon>{{ tel.type }} : {{tel.numero}}</p>
       </div>
     </div>
     <div class="mail-container">

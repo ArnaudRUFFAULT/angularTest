@@ -1,0 +1,81 @@
+<mat-card>
+  <h1>Ajouter un contact</h1>
+  <form [formGroup]="form">
+    <mat-form-field class="civilite">
+      <mat-select placeholder="Civilité" formControlName="civilite" required>
+        <mat-option value="0">Mme.</mat-option>
+        <mat-option value="1">M.</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('civilite').errors?.required">Choisissez votre civilité</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Prénom" formControlName="prenom" required />
+      <mat-error *ngIf="form.get('prenom').errors?.required">Le prénom est obligatoire</mat-error>
+      <mat-error *ngIf="form.get('prenom').errors?.pattern">Le prénom ne peut contenir que des lettres ou des tirets</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nom" formControlName="nom" required />
+      <mat-error *ngIf="form.get('nom').errors?.required">Le nom est obligatoire</mat-error>
+      <mat-error *ngIf="form.get('nom').errors?.pattern">Le nom ne peut contenir que des lettres ou des tirets</mat-error>
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <input matInput placeholder="Adresse - Ligne 1" formControlName="adresse1" required />
+      <mat-error *ngIf="form.get('adresse1').errors?.required">L'adresse est obligatoire</mat-error>
+      <mat-error *ngIf="form.get('adresse1').errors?.pattern">Ne peut contenir que des lettres, chiffres, espaces, tirets, points, virgules</mat-error>
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <input matInput placeholder="Adresse - Ligne 1" formControlName="adresse2" />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <input matInput placeholder="Code postal" formControlName="cp" required />
+      <mat-error *ngIf="form.get('cp').errors?.required">Entrez votre code postal</mat-error>
+      <mat-error *ngIf="form.get('cp').errors?.pattern">Contient uniquement des chiffres</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Ville" formControlName="ville" required />
+      <mat-error *ngIf="form.get('ville').errors?.required">Champ obligatoire</mat-error>
+      <mat-error *ngIf="form.get('ville').errors?.pattern">Ne peut contenir que des lettres ou des tirets (ou espaces)</mat-error>
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <input matInput placeholder="E-mail" formControlName="email" required />
+      <mat-error *ngIf="form.get('email').errors?.required">Champ obligatoire</mat-error>
+      <mat-error *ngIf="form.get('email').errors?.email">Doit avoir un format Email</mat-error>
+    </mat-form-field>
+
+    <br />
+
+    <div formArrayName="telephones">
+      <div *ngFor="let p of telephonesForm.controls, let i = index" [formGroupName]="i">
+        <mat-form-field>
+          <mat-select placeholder="Type" formControlName="type">
+            <mat-option value="0">Domicile</mat-option>
+            <mat-option value="1">Portable</mat-option>
+            <mat-option value="2">Professionnel</mat-option>
+          </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Numéro" formControlName="numero" />
+            <mat-error *ngIf="p.get('numero').errors?.pattern">Doit être composé uniquement de chiffres</mat-error>
+          </mat-form-field>
+          <button mat-mini-fab color="warn" (click)="supprimerTelephone(i)">X</button>
+      </div>
+      <button mat-raised-button color="primary" (click)="ajouterTelephone()">Ajouter un numéro</button>
+    </div>
+  </form>
+</mat-card>
+<p>{{form.value | json}}</p>

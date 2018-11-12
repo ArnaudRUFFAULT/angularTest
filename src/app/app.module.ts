@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -12,13 +12,21 @@ import {MatTableModule} from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { ListContactsComponent } from './list-contacts/list-contacts.component';
 import { ContactComponent } from './list-contacts/contact/contact.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AjoutContactComponent } from './admin/ajout-contact/ajout-contact.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    ListContactsComponent
+    ListContactsComponent,
+    AjoutContactComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +37,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatTableModule,
     AppRoutingModule,
-    MatIconModule
-
+    MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
