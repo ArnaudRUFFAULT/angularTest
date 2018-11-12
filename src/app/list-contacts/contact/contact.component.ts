@@ -12,6 +12,8 @@ export class ContactComponent implements OnInit {
 
   contact : Contact;
   error : any;
+  editModeNom = false;
+
   constructor(private contactService : ContactService, private route: ActivatedRoute, private router : Router ){
   }
 
@@ -33,6 +35,14 @@ export class ContactComponent implements OnInit {
       _=>this.router.navigate(['/contacts']),
       error => console.log(error)
     )
+  }
+
+  modeEditionNom(){
+    this.editModeNom = !this.editModeNom;
+  }
+
+  modifierContact(){
+    
   }
 
 }

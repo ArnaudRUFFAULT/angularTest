@@ -3,6 +3,7 @@ import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
 import { Civilite } from '../civilite.enum';
 import { TypeTelephone } from '../type-telephone';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-list-contacts',
@@ -11,23 +12,27 @@ import { TypeTelephone } from '../type-telephone';
 })
 export class ListContactsComponent implements OnInit {
 
-  contacts : Contact[];
-    error :any ;
-    displayedColumns: string[] = ['civilite', 'nom', 'prenom', 'detail'];
-    constructor(private contactService : ContactService ){
-    
-    }
+  contacts: MatTableDataSource<Contact>;
+  error: any;
+  displayedColumns: string[] = ['civilite', 'nom', 'prenom', 'detail'];
+  constructor(private contactService: ContactService) {
 
-    ngOnInit(){
-      this.refreshContacts();
-    }
+  }
 
-    refreshContacts(){
-      this.contactService.getContacts().subscribe(
-        (contacts: Contact[]) => {
-          this.contacts = contacts.map(c => Contact.fromWsResponse(c))
-        },
-        error => this.error = error
-      )
-    }
+  ngOnInit() {
+    this.refreshContacts();
+  }
+
+  applyFilter(filterValue: string) {
+    this.contacts.filter = filterValue.trim().toLowerCase();
+  }
+
+  refreshContacts() {
+    this.contactService.getContacts().subscribe(
+      (contacts: Contact[]) => {
+        this.contacts = new MatTableDataSource(contacts.map(c => Contact.fromWsResponse(c)))
+      },
+      error => this.error = error
+    )
+  }
 }

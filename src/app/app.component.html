@@ -1,9 +1,20 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Liste de contacts</span>
+    <span>Liste des contacts</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" (click)="redirectListContacts()">home</mat-icon>
-    <mat-icon class="example-icon" (click)="redirectAddContact()">group_add</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="redirectListContacts()">
+        <mat-icon>home</mat-icon>
+        <span>Acceuil</span>
+      </button>
+      <button mat-menu-item (click)="redirectAddContact()">
+        <mat-icon>group_add</mat-icon>
+        <span>Ajouter un contact</span>
+      </button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
 

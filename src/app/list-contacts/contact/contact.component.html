@@ -1,6 +1,12 @@
 <div *ngIf="contact">
   <mat-card class="contact-list">
-    <h2>Fiche {{ contact.civilite | titlecase}} {{ contact.nom | uppercase}} {{ contact.prenom | titlecase}}</h2>
+    <p>Fiche {{ contact.civilite | titlecase}} <span *ngIf = "!editModeNom">{{ contact.nom | uppercase}}</span> {{ contact.prenom | titlecase}}
+        <button mat-raised-button color="primary" (click)="modeEditionNom()"><mat-icon>edit</mat-icon></button>
+    </p>
+    <span *ngIf = "editModeNom"><input  [value]="contact.nom" [(ngModel)]="contact.nom"></span>
+    
+    <button *ngIf = "editModeNom" mat-raised-button color="primary" (click)="modifierContact()"><mat-icon>check</mat-icon></button>
+    <button *ngIf = "editModeNom" mat-raised-button color="primary" (click)="modeEditionNom()"><mat-icon>wrap_text</mat-icon></button>
     <div class="adresse-container">
       <div>
         <mat-icon>home</mat-icon>

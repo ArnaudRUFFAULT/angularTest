@@ -35,6 +35,40 @@
           "type": 1
         }
       ]
+    },
+    {
+      "prenom": "Arnaud",
+      "nom": "RUFFAULT",
+      "civilite": "0",
+      "adresseLigne1": "101 avenue, residence le moulin",
+      "adresseLigne2": "zzqee",
+      "cp": "34000",
+      "ville": "Montpellier",
+      "mail": "ddd@dddd",
+      "telephones": [
+        {
+          "type": "1",
+          "numero": ""
+        }
+      ],
+      "id": 4
+    },
+    {
+      "prenom": "Georgette",
+      "nom": "RUFFA",
+      "civilite": "0",
+      "adresseLigne1": "101 avenue, residence le moulin",
+      "adresseLigne2": "zzqee",
+      "cp": "34000",
+      "ville": "Montpellier",
+      "mail": "ddd@dddd",
+      "telephones": [
+        {
+          "type": "1",
+          "numero": ""
+        }
+      ],
+      "id": 5
     }
   ]
 }
